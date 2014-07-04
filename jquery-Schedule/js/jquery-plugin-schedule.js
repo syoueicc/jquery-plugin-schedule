@@ -1,3 +1,14 @@
+/*!
+  * jQuery plugin schedule v1.0.0
+  * http://cancel.sinaapp.com
+  * cancel.wu@foxmail.com
+  *
+  * Copyright 2014 by cancel wu
+  *
+  * Date: 2014/07/04
+  *
+*/
+
 $.fn.Schedule = function(options){
 
   if(typeof options == "string") {
@@ -23,13 +34,14 @@ $.fn.Schedule = function(options){
   }
 
   function Schedule() {
-    try{
-      options.currentDay.getTime();
-    }catch(e){
-      options.currentDay = new Date(options.currentDay);
-    }
     this._default_ = $.extend({}, _default, options);
-    this.titleText = this._default_.currentDay.getFullYear() + " " + (this._default_.currentDay.getMonth() + 1)
+    try{
+      this._default_ .currentDay.getTime();
+    }catch(e){
+      this._default_ .currentDay = new Date(this._default_ .currentDay);
+    }
+    
+    this.titleText = this._default_.currentDay.getFullYear() + " " + (this._default_.currentDay.getMonth() + 1);
   }
 
   Schedule.prototype = {
