@@ -1,0 +1,275 @@
+#cc-datePicker {
+  margin: 0 auto;
+}
+.cc-infoPanel {
+  width: 100%;
+  height: 38px;
+  background-color: #d9edf7;
+  display: flex;
+  border: 1px solid #c3e9f2;
+  font-size: 12px;
+}
+.cc-infoPanel .total, .cc-infoPanel .putDate, .cc-infoPanel .totalDays, .cc-infoPanel .unit {
+  float: left;
+  height: 38px;
+  line-height: 38px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.cc-infoPanel .total label, .cc-infoPanel .unit label {
+  color: #d12610;
+}
+.cc-infoPanel .putDate label {
+  color: #666666;
+}
+.cc-infoPanel .totalDays label {
+  color: #6ea12c;
+}
+.cc-dc {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 10px 0;
+  margin: 0;
+  border: 1px solid #e5e5e5;
+  font-size: 12px;
+  font-family: "微软雅黑";
+  display: inline-block;
+}
+.cc-dc .cc-dc-title {
+  width: 100%;
+  height: 45px;
+  background-color: #eaeaea;
+  overflow: hidden;
+  position: relative;
+  
+}
+.cc-dc .cc-dc-title .cc-dc-title-text {
+  width: 100%;
+  height: 45px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 45px;
+}
+.cc-dc .cc-dc-title .cc-dc-title-btn {
+  position: absolute;
+  width: 48px;
+  height: 27px;
+  border: 1px solid #aaaaaa;
+  top: 8px;
+  left: 20px;
+}
+.cc-dc .cc-dc-title .cc-dc-title-btn .pre, .cc-dc .cc-dc-title .cc-dc-title-btn .next {
+  width: 23px;
+  height: 27px;
+  line-height: 27px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+}
+.cc-dc .cc-dc-title .cc-dc-title-btn .pre {
+  border-right: 1px solid #aaaaaa;
+}
+.cc-dc .cc-dc-content {
+  width: 100%;
+  height: auto;
+}
+
+.cc-dc .cc-dc-content .itemPanel {
+  height: auto;
+  margin: 20px auto;
+}
+.cc-dc .cc-dc-content .itemPanel .weekPanel .item,
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item {
+  border: 1px solid #cecece;
+  float: left;
+  cursor: pointer;
+  color: #585160;
+}
+
+.cc-dc .cc-dc-content .itemPanel .daysPanel .days {
+
+}
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item .row {
+  width: 100%;
+  height: 25%;
+  text-align: left;
+  text-indent: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 12px;
+}
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item .row.dateLine {
+  text-align: right;
+  color: #635e58;
+  font-weight: bold;
+}
+.cc-dc .cc-dc-content .itemPanel .weekPanel .item.week {
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: default;
+  background-color: #f3f3f3;
+}
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.past {
+  cursor: default;
+}
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.future {
+}
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.past .row.dateLine,
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.future .row.dateLine{
+  text-align: right;
+  color: #cfcfcf;
+}
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.seted {
+  border: 1px solid #3c599a;
+  background-color: #ebeef5;
+}
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.seted .row.dateLine {
+  background-color: #9dabcc;
+}
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.selected,
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.startDate {
+  border: 1px solid #ffdb71;
+  background-color: #ffffdb;
+}
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.selected .row.dateLine,
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.startDate .row.dateLine {
+  background-color: #ffeda5;
+}
+
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.current{
+  border: 1px solid #f00;
+}
+.cc-dc-win {
+  width: 100%;
+  height:100%;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  position: fixed;
+}
+.cc-dc-win .cc-dc-win-mask {
+  width: 100%;
+  height:100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  position: absolute;
+  background-color: #333333;
+  opacity: 0.2;
+}
+.cc-dc-win .cc-dc-win-mes {
+  width: 385px;
+  height: 364px;
+  border: 1px solid #ccc;
+  position: absolute;
+  z-index: 101;
+  background-color: #fff;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-title {
+  width: 100%;
+  height: 38px;
+  background-color: #eaeaea;
+  overflow: hidden;
+  font-size: 16px;
+  font-family: "微软雅黑";
+  line-height: 38px;
+  text-indent: 1.5em;
+  position: relative;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-title .closeX {
+  position: absolute;
+  right: 4px;
+  top: 6px;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  font-family: "Arial";
+  cursor: pointer;
+  text-indent: initial;
+  text-align: center;
+  line-height: 24px;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-content {
+  width: 100%;
+  height: 280px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-content .rowLine {
+  width: 100%;
+  height: 35px;
+  margin: 9px 0;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-content .rowLine .left,
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-content .rowLine .right {
+  width: 135px;
+  height: 35px;
+  line-height: 35px;
+  float: left;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-content .rowLine .left {
+  
+  text-align: right;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-content .rowLine .text {
+  font-size: 12px;
+  font-family: "微软雅黑";
+  font-weight: bold;
+  color: #666666;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-content .rowLine .right{
+  width: 210px;
+  padding-left: 30px; 
+  font-size: 12px;
+  font-family: "微软雅黑";
+  color: #666666;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-content .rowLine .right .input{
+  width: 140px; 
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-btnPanel {
+  width: 100%;
+  height: 45px;
+  border-top: 1px solid #efefef;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-btnPanel .btn-Panel {
+  width: 245px;
+  height: 45px;
+  float: right;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-btnPanel .btn-Panel .enter,
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-btnPanel .btn-Panel .clear,
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-btnPanel .btn-Panel .cancel{
+  width: 65px;
+  height: 26px;
+  border: 1px solid #ccc;
+  float: left;
+  text-align: center;
+  line-height: 26px;
+  color: #666;
+  font-size: 12px;
+  font-family: "微软雅黑";
+  margin-top: 9px;
+  display: inline;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-btnPanel .btn-Panel .enter {
+  border-color: #357ebd;
+  background-color: #428bca;
+  color: #fff;
+
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-btnPanel .btn-Panel .clear {
+  margin-left: 29px;
+}
+.cc-dc-win .cc-dc-win-mes .cc-dc-win-mes-btnPanel .btn-Panel .cancel {
+  margin-left: 8px;
+}

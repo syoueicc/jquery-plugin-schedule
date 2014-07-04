@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cancel && Kosai</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  </head>
+  <body>
+    <div id="container" style="width: 600px; height: 500px; background-color: #fff; margin: 20px 0 0 20px;">
+
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-plugin-schedule.js"></script>
+    <link rel="stylesheet" href="js/schedule.css">
+
+    <script type="text/javascript">
+    $("#container").Schedule({
+      currentDay: new Date("2014/07/01")
+    });
+    $("#container").Schedule("setSetData", "2014/07/01,1.00,6,3.00,1|2014/07/02,1.00,6,3.00,1|2014/07/03,1.00,6,3.00,1|2014/07/04,1.00,6,3.00,1|2014/07/05,1.00,6,3.00,1|2014/07/06,1.00,6,3.00,1|2014/07/07,1.00,6,3.00,1|2014/07/08,1.00,6,3.00,1|2014/07/09,1.00,6,3.00,1");
+    </script>
+  </body>
+</html>
