@@ -280,7 +280,7 @@ $.fn.Schedule = function(options){
         _total.push(dateSource[i].split(",")[1]);
       }
       
-      return eval(_total.join("+"));
+      return parseFloat(eval(_total.join("+"))).toFixed(2);
     },
     getTotalAntUnit: function() {
       if(this.settingData == null) return 0;
@@ -525,9 +525,16 @@ $.fn.Schedule = function(options){
         tempTime.setUTCFullYear(items[i][0], parseInt(items[i][1]) - 1, items[i][2]); 
         tempTime = this.__setTimezero(tempTime);
        
-        if(today.getTime() > tempTime.getTime()) temp.addClass("past");
-        if(today.getTime() == tempTime.getTime()) temp.addClass("current");
-        if(today.getMonth() < tempTime.getMonth()) temp.addClass("future");
+        if(today.getTime() > tempTime.getTime()) {
+        	temp.addClass("past");
+        }else if(today.getTime() == tempTime.getTime()) {
+        	temp.addClass("current");
+        }else if(today.getFullYear() < tempTime.getFullYear() || today.getMonth() <= tempTime.getMonth()) {
+        	 temp.addClass("future");
+        	 if((tempTime.getMonth() + 1) == this.titleText.split(" ")[1]) {
+        		 temp.addClass("currentMonth");
+        	 }
+        }
         if(this.startDateItem) {
           if(temp.data("date").join("/") == this.startDateItem) temp.addClass("startDate");
         }
