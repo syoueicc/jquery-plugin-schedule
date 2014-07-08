@@ -7,7 +7,6 @@
   background-color: #d9edf7;
   display: flex;
   border: 1px solid #c3e9f2;
-  font-size: 12px;
 }
 .cc-infoPanel .total, .cc-infoPanel .putDate, .cc-infoPanel .totalDays, .cc-infoPanel .unit {
   float: left;
@@ -102,7 +101,7 @@
 }
 .cc-dc .cc-dc-content .itemPanel .daysPanel .item .row.dateLine {
   text-align: right;
-  color: #635e58;
+  color: #cfcfcf;
   font-weight: bold;
 }
 .cc-dc .cc-dc-content .itemPanel .weekPanel .item.week {
@@ -124,6 +123,9 @@
   text-align: right;
   color: #cfcfcf;
 }
+.cc-dc .cc-dc-content .itemPanel .daysPanel .item.currentMonth .row.dateLine {
+	color: #635e58;
+}
 .cc-dc .cc-dc-content .itemPanel .daysPanel .item.seted {
   border: 1px solid #3c599a;
   background-color: #ebeef5;
@@ -140,9 +142,11 @@
 .cc-dc .cc-dc-content .itemPanel .daysPanel .item.startDate .row.dateLine {
   background-color: #ffeda5;
 }
-
 .cc-dc .cc-dc-content .itemPanel .daysPanel .item.current{
   border: 1px solid #f00;
+}
+ .cc-dc .cc-dc-content .itemPanel .daysPanel .item.current .row.dateLine{
+  color: #635e58;
 }
 .cc-dc-win {
   width: 100%;
